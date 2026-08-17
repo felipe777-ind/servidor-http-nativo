@@ -1,17 +1,17 @@
-const http = require('node:http');
+const http = require('node:http')
 
-const PORTA = 3000;
+const porta = 3000
 
-const server = http.createServer((req, res)=>{
+const server = http.createServer();
+
+server.on('request', (req, res ) => {
     console.log(`Requisição recebida! ${req.method} ${req.url}`);
-
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-
-    res.end("Servidor nativo funcionando!");
-//req = request && res = response
+    
+    res.statusCode = 201
+    res.setHeader('content-type', 'application/json; charset=utf-8');
+    res.end(JSON.stringify({ status: "ok" }));
 });
 
-server.listen(PORTA, () => {
-    console.log(`Servidor funcionando na porta ${PORTA}`);
+server.listen(porta, ()=> {
+    console.log("Seridor ouvindo na porta ${porta}")
 });
