@@ -16,3 +16,5 @@ server.on('request', (req, res ) => {
 server.listen(porta, ()=> {
     console.log("Seridor ouvindo na porta ${porta}")
 });
+
+//Questão 4) A página demorou muito para carregar e depois apareceu uma msg de que a pagina nao esta funcionando
